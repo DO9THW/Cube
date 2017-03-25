@@ -1,0 +1,2 @@
+# Cube
+Zauberwürfel mit PyCuber
