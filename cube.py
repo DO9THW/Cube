@@ -3,10 +3,14 @@ import os
 import pycuber as pc
 from pycuber.solver import CFOPSolver
 
-#Würfel erstellen
+#Würfel mischen
+#alg = pc.Formula()
+#random_alg = alg.random()
+#print(random_alg)
+#cube(random_alg)
+
+# Eigenen Würfel erstellen
 cubie = pc.Cubie()
-#                           000000000111111111222222222333333333444444444555555555
-#                           000 000 000 111 111 111 222 222 222 333 333 333 444 444 444 555 555 555
 #
 #   0:red
 #   1:yellow
@@ -26,14 +30,10 @@ print(cubie)
 cube = pc.Cube(cubie)
 cube_step = pc.Cube(cubie)
 
+#Würfel anzeigen
 print(cube)
 
-#Würfel mischen
-#alg = pc.Formula()
-#random_alg = alg.random()
-#print(random_alg)
-#cube(random_alg)
-#print(cube)
+
 
 #Würfel lösen
 solver = CFOPSolver(cube)
@@ -41,6 +41,8 @@ solution = solver.solve(suppress_progress_messages=False)
 
 #Würfel gelöst
 print(cube)
+
+#Schritte einzeln anzeigen
 for step in solution:
     cube_step(step)
     print(step)
